@@ -2,7 +2,7 @@ import { Cpu, Lock, Sparkles, Zap } from 'lucide-react'
 
 export function Features() {
     return (
-        (<section className="py-24 md:py-32">
+        (<section className="py-40 md:py-20 lg:py-14 lg:pt-[25%]">
             <div className="mx-auto max-w-5xl space-y-12 px-6">
                 <div
                     className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
@@ -49,7 +49,7 @@ export function Features() {
                             <Lock className="size-4" />
                             <h3 className="text-sm font-medium">Security</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Your data is encrypted, even not us can access it.</p>
+                        <p className="text-muted-foreground text-sm">Your data is encrypted, not even us can access it.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">

@@ -10,7 +10,7 @@ export function HeroSection() {
     return (
         <main className="overflow-x-hidden">
             <section>
-                <div className="py-24 md:pb-32 lg:pb-36 lg:pt-72">
+                <div className="py-20 md:pb-32 lg:pb-20 lg:pt-32">
                     <div
                         className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
                         <div
@@ -47,6 +47,22 @@ export function HeroSection() {
                                         <span className="text-nowrap">See demo</span>
                                     </Link>
                                 </Button>
+                            </div>
+                            
+                            {/* Industry chips */}
+                            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                                <span className="text-sm text-muted-foreground">Perfect for:</span>
+                                <div className="flex flex-wrap gap-2">
+                                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                        Dental Clinics
+                                    </span>
+                                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                        Gyms
+                                    </span>
+                                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                        Hotels
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
