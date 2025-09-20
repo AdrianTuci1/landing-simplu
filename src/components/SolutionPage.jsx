@@ -1,58 +1,109 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from './ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ChevronDown, ChevronRight } from 'lucide-react';
+import { cn } from '../lib/utils';
 
 const SolutionPage = () => {
   const [activeAccordion, setActiveAccordion] = useState(0);
 
   const accordionItems = [
     {
-      title: "Advanced timeline",
-      description: "Track your projects with precision using our advanced timeline features. Visualize progress, set milestones, and keep your team aligned with real-time updates.",
-      image: "/manage.png"
+      title: "Cronologie avansată",
+      description: "Urmărește proiectele tale cu precizie folosind funcțiile noastre avansate de cronologie. Vizualizează progresul, setează milestone-uri și păstrează echipa ta aliniată cu actualizări în timp real.",
+      image: "/dashboard.png"
     },
     {
-      title: "Multiple locations",
-      description: "Manage and present multiple locations in one place",
-      image: "/website.png"
+      title: "Multiple locații",
+      description: "Gestionează și prezintă multiple locații într-un singur loc",
+      image: "/location.png"
     },
     {
-      title: "Integrated sales and invoicing",
-      description: "Streamline your business operations with integrated sales tracking and automated invoicing. Manage customers, track payments, and generate professional invoices.",
-      image: "/website.png"
+      title: "Vânzări și facturare integrate",
+      description: "Optimizează operațiunile tale de business cu urmărirea vânzărilor integrate și facturarea automată. Gestionează clienții, urmărește plățile și generează facturi profesionale.",
+      image: "/sales.png"
     },
     {
-      title: "Presentation web page",
-      description: "Create stunning presentation pages that showcase your work professionally. Customizable templates and interactive elements to engage your audience.",
-      image: "/simplu.png"
+      title: "Pagină web de prezentare",
+      description: "Creează pagini de prezentare uimitoare care îți prezintă munca profesional. Template-uri personalizabile și elemente interactive pentru a atrage audiența ta.",
+      image: "/hero.png"
     },
-    {
-      title: "Integrated agents",
-      description: "Connect with your team seamlessly through integrated agent features. Real-time collaboration, task assignment, and communication tools all in one place.",
-      image: "/demoImg.png"
-    }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* Presentation Section */}
-      <section className="container mx-auto px-4 py-16 text-left">
+      {/* Cards Section */}
+      <section className="container mx-auto px-4 py-16">
         <div className="mt-20">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Select the solution that you need
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-            Choose from our comprehensive suite of tools designed to streamline your workflow and boost productivity
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 items-start">
-            <Button size="lg" className="px-8 py-3 text-lg bg-blue-600 hover:bg-blue-700">
-              Try Now
-            </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-2">
-              Learn More
-            </Button>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Card 1 - Dashboard */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                <img src="/dashboard.png" alt="Dashboard" className="w-10 h-10" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Management clinica
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Platforma colaborativa cu asistent AI. Primeste date in timp real si lasa agentul sa preia programari
+                din surse multiple.
+              </p>
+              <Button size="sm" variant="outline" className="w-full">
+                Vezi Live
+              </Button>
+            </div>
+
+            {/* Card 2 - Multiple Locations */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+              <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                <img src="/location.png" alt="Multiple Locations" className="w-10 h-10" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Management hotel
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Administrează multiple locații într-o interfață. Obtine date in timp real si lasa agentul
+                sa se sincronizeze cu platformele externe. 
+              </p>
+              <Button size="sm" variant="outline" className="w-full">
+                Vezi Live
+              </Button>
+            </div>
+
+            {/* Card 3 - Sales & Billing */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <img src="/sales.png" alt="Sales & Billing" className="w-10 h-10" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Management fitness
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Ofera chei de acces clientilor tai chiar in web sau ios, android. Asigura prezenta 100% la clase sau
+                servicii cu agentul conversational.
+              </p>
+              <Button size="sm" variant="outline" className="w-full">
+                Vezi Live
+              </Button>
+            </div>
+
+            {/* Card 4 - Website Presentation */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+              <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                <img src="/hero.png" alt="Website Presentation" className="w-10 h-10" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Management imobiliare
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Previzualizeaza propietatile pe harta si stocheaza documentele chiar pe pin-urile acestora.
+              </p>
+              <Button size="sm" variant="outline" className="w-full">
+                Află mai mult
+              </Button>
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -63,10 +114,10 @@ const SolutionPage = () => {
           <div className="space-y-3">
             <div className="mb-6">
               <h2 className="text-4xl font-bold text-gray-900 mb-3">
-                Everything you need packed in one app
+                Tot ce ai nevoie într-o singură aplicație
               </h2>
               <p className="text-lg text-gray-600">
-                Discover all the powerful features that will transform your workflow and help you achieve more.
+                Descoperă toate funcțiile puternice care îți vor transforma workflow-ul și te vor ajuta să realizezi mai mult.
               </p>
             </div>
             
@@ -107,8 +158,11 @@ const SolutionPage = () => {
 
           {/* Right Column - Images */}
           <div className="lg:mt-24">
-            <div className="bg-gray-50 p-0 rounded-2xl aspect-[1/1] w-full h-full">
-              <div className="w-full h-full flex justify-center items-center ">
+            <div className={cn(
+              "p-0 rounded-2xl aspect-[1/1] w-full h-full",
+              "bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
+            )}>
+              <div className="w-full h-full flex justify-center items-center">
                   <div className="flex items-center justify-center min-h-[500px] overflow-hidden">
                       <img 
                         src={accordionItems[activeAccordion].image} 
@@ -129,13 +183,7 @@ const SolutionPage = () => {
           <div className="flex justify-center order-2 lg:order-1 pt-10">
             <div className="w-[95%] aspect-[1/1] sm:w-[90%] lg:w-[100%] bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-lg sm:shadow-xl">
               <div className="text-center p-6 sm:p-8 lg:p-12">
-                <div className="w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 lg:mb-8">
-                  <svg className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-white pt-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 sm:mb-3">AI Assistant</h3>
-                <p className="text-sm sm:text-lg lg:text-xl text-gray-600">Your intelligent companion for productivity</p>
+                <img src="/agent.png" alt="Asistent AI" className="w-full h-full object-cover rounded-2xl" />
               </div>
             </div>
           </div>
@@ -143,43 +191,43 @@ const SolutionPage = () => {
           {/* Right Column - 4 Paragraphs with Chip */}
           <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
             <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4 sm:mb-6">
-              AI Assistant
+              Asistent AI
             </div>
             
             <div className="space-y-6 sm:space-y-8">
               <div>
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Smart Learning</h4>
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Învățare Inteligentă</h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-                  Experience the future of productivity with our advanced AI assistant. 
-                  It learns from your workflow patterns and provides intelligent suggestions 
-                  to help you work smarter, not harder.
+                  Experimentează viitorul productivității cu asistentul nostru AI avansat. 
+                  Învață din tiparele tale de workflow și oferă sugestii inteligente 
+                  pentru a te ajuta să lucrezi mai inteligent, nu mai mult.
                 </p>
               </div>
               
               <div>
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Task Optimization</h4>
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Optimizare Sarcini</h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-                  From automated task prioritization to smart scheduling recommendations, 
-                  our AI assistant adapts to your unique working style and helps you 
-                  focus on what matters most.
+                  De la priorizarea automată a sarcinilor la recomandări inteligente de programare, 
+                  asistentul nostru AI se adaptează la stilul tău unic de lucru și te ajută 
+                  să te concentrezi pe ceea ce contează cel mai mult.
                 </p>
               </div>
               
               <div>
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Instant Insights</h4>
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Insights Instantanee</h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-                  Get instant answers to your questions, automated report generation, 
-                  and intelligent insights that help you make better decisions faster. 
-                  The AI assistant is always learning and improving.
+                  Obține răspunsuri instantanee la întrebările tale, generare automată de rapoarte, 
+                  și insights inteligente care te ajută să iei decizii mai bune mai rapid. 
+                  Asistentul AI învață și se îmbunătățește mereu.
                 </p>
               </div>
               
               <div>
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Seamless Integration</h4>
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Integrare Fără Cusături</h4>
                 <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-                  Seamlessly integrate with your existing tools and workflows. 
-                  Our AI assistant works behind the scenes to enhance your productivity 
-                  without disrupting your established processes.
+                  Integrează-te fără probleme cu instrumentele și workflow-urile tale existente. 
+                  Asistentul nostru AI lucrează în fundal pentru a-ți îmbunătăți productivitatea 
+                  fără să-ți deranjeze procesele stabilite.
                 </p>
               </div>
             </div>
@@ -189,19 +237,19 @@ const SolutionPage = () => {
 
       {/* Call to Action Section */}
       <section className="container mx-auto px-4 py-16">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-center text-white">
+        <div className="bg-gradient-to-r from-gray-600 to-purple-600 rounded-3xl p-12 text-center text-white">
           <h2 className="text-4xl font-bold mb-4">
-            Ready to get started?
+            Ești gata să începi?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of users who have already transformed their workflow
+            Alătură-te miilor de utilizatori care și-au transformat deja workflow-ul
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="px-8 py-3 text-lg">
-              Start Free Trial
+              Începe Proba Gratuită
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3 text-lg border-white text-white hover:bg-white hover:text-blue-600">
-              Schedule Demo
+            <Button size="lg" variant="default" className="px-8 py-3 text-lg border-white text-white bg-black hover:text-blue">
+              Vezi Preturi
             </Button>
           </div>
         </div>
@@ -209,5 +257,7 @@ const SolutionPage = () => {
     </div>
   );
 };
+
+
 
 export default SolutionPage;

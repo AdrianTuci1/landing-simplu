@@ -10,8 +10,8 @@ export function Features11() {
                         className="group overflow-hidden shadow-black/5 sm:col-span-3 sm:rounded-none sm:rounded-tl-xl">
                         <CardHeader>
                             <div className="md:p-6">
-                                <p className="font-medium">Proffesional presentation website</p>
-                                <p className="text-muted-foreground mt-3 max-w-sm text-sm">It doesn't just look good, it converts.</p>
+                                <p className="font-medium">Pagina cu design profesional</p>
+                                <p className="text-muted-foreground mt-3 max-w-sm text-sm">Nu doar arată bine, este si usor de folosit.</p>
                             </div>
                         </CardHeader>
 
@@ -22,13 +22,13 @@ export function Features11() {
                             <div
                                 className="bg-background overflow-hidden rounded-tl-lg border-l border-t pl-2 pt-2 dark:bg-zinc-950">
                                 <img
-                                    src="/website.png"
+                                    src="/hero.png"
                                     className="hidden dark:block"
                                     alt="payments illustration dark"
                                     width={1207}
                                     height={929} />
                                 <img
-                                    src="/website.png"
+                                    src="/hero.png"
                                     className="shadow dark:hidden"
                                     alt="payments illustration light"
                                     width={1207}
@@ -40,7 +40,7 @@ export function Features11() {
                     <Card
                         className="group overflow-hidden shadow-zinc-950/5 sm:col-span-2 sm:rounded-none sm:rounded-tr-xl">
                         <p
-                            className="mx-auto my-6 max-w-md text-balance px-6 text-center text-lg font-semibold sm:text-2xl md:p-6">Advanced UX, Instantly locate what you need.</p>
+                            className="mx-auto my-6 max-w-md text-balance px-6 text-center text-lg font-semibold sm:text-2xl md:p-6">UX avansat, găsește instant ceea ce ai nevoie.</p>
 
                         <CardContent className="mt-auto h-fit">
                             <div className="relative mb-6 sm:mb-0">
@@ -66,7 +66,7 @@ export function Features11() {
                     <Card
                         className="group p-6 shadow-black/5 sm:col-span-2 sm:rounded-none sm:rounded-bl-xl md:p-12">
                         <p
-                            className="mx-auto mb-12 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl">Choose your own domain.</p>
+                            className="mx-auto mb-12 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl">Alege propriul domeniu.</p>
 
                         <div className="flex justify-center">
                             <div
@@ -84,8 +84,8 @@ export function Features11() {
                     <Card
                         className="group relative shadow-black/5 sm:col-span-3 sm:rounded-none sm:rounded-br-xl">
                         <CardHeader className="p-6 md:p-12">
-                            <p className="font-medium">Advanced integration</p>
-                            <p className="text-muted-foreground mt-2 max-w-sm text-sm">AI can take full control of your business.</p>
+                            <p className="font-medium">Integrare avansată</p>
+                            <p className="text-muted-foreground mt-2 max-w-sm text-sm">AI-ul poate prelua controlul complet al afacerii tale.</p>
                         </CardHeader>
                         <CardContent className="relative h-fit px-6 pb-6 md:px-12 md:pb-12">
                             <div className="grid grid-cols-4 gap-2 md:grid-cols-6">
@@ -94,7 +94,7 @@ export function Features11() {
                                     className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
                                     <img
                                         className="m-auto size-15"
-                                        src="https://11labs-nonprd-15f22c1d.s3.eu-west-3.amazonaws.com/a2ea339b-8b5e-41bb-b706-24eda8a4c9e3/elevenlabs-symbol.svg"
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVf5kvPJI5bjBGVG5PiiueDXduVAV5p2kMcA&s"
                                         alt="Linear logo"
                                         width="32"
                                         height="32" />
@@ -104,7 +104,7 @@ export function Features11() {
                                     className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
                                     <img
                                         className="m-auto size-8"
-                                        src="https://avatars.githubusercontent.com/u/109142?s=280&v=4"
+                                        src="https://toppng.com/uploads/preview/mail-logo-gmail-logo-2018-11562993752ysgnopnnhx.png"
                                         alt="Netlify logo"
                                         width="32"
                                         height="32" />
@@ -114,7 +114,7 @@ export function Features11() {
                                     className="rounded-(--radius) bg-muted/50 flex aspect-square items-center justify-center border p-4">
                                     <img
                                         className="m-auto size-8"
-                                        src="https://cdn.prod.website-files.com/65ba24129df733a18dfde106/65e070b8e382b5c1e1fa9b20_slack-transp.png"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
                                         alt="github logo"
                                         width="32"
                                         height="32" />

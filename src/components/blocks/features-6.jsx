@@ -1,4 +1,5 @@
 import { Cpu, Lock, Sparkles, Zap } from 'lucide-react'
+import { RobotNotification } from '../ui/robot-notification'
 
 export function Features() {
     return (
@@ -6,8 +7,8 @@ export function Features() {
             <div className="mx-auto max-w-5xl space-y-12 px-6">
                 <div
                     className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
-                    <h2 className="text-4xl font-semibold">Agent embedded workflows in your business</h2>
-                    <p className="max-w-sm sm:ml-auto">Empower your team with workflows that adapt to your needs, whether you prefer real-time synchronization or Agentic interface.</p>
+                    <h2 className="text-4xl font-semibold">Fluxuri de lucru integrate cu agent AI în afacerea ta</h2>
+                    <p className="max-w-sm sm:ml-auto">Împuternicește-ți echipa cu fluxuri care se adaptează la nevoile tale, fie că preferi sincronizarea în timp real sau interfața agentică.</p>
                 </div>
                 <div className="relative rounded-3xl p-3 md:-mx-8 lg:col-span-3">
                     <div className="aspect-[88/36] relative">
@@ -20,12 +21,14 @@ export function Features() {
                             width={2797}
                             height={1137} />
                         <img
-                            src="/manage.png
-    "
+                            src="/dashboard.png"
                             className="dark:hidden rounded-3xl"
                             alt="payments illustration light"
                             width={2797}
                             height={1137} />
+                        
+                        {/* Robot Notification Overlay */}
+                        <RobotNotification />
                     </div>
                 </div>
                 <div
@@ -33,31 +36,31 @@ export function Features() {
                     <div className="space-y-3">
                         <div className="flex items-center gap-2">
                             <Zap className="size-4" />
-                            <h3 className="text-sm font-medium">Faaast</h3>
+                            <h3 className="text-sm font-medium">Rapid</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Get things done faster with real-time synchronization.</p>
+                        <p className="text-muted-foreground text-sm">Finalizează lucrurile mai rapid cu sincronizarea în timp real.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <Cpu className="size-4" />
-                            <h3 className="text-sm font-medium">Powerful</h3>
+                        <h3 className="text-sm font-medium">Puternic</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Runs in the cloud, no need to install anything.</p>
+                        <p className="text-muted-foreground text-sm">Rulează în cloud, nu trebuie să instalezi nimic.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <Lock className="size-4" />
-                            <h3 className="text-sm font-medium">Security</h3>
+                            <h3 className="text-sm font-medium">Securizat</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Your data is encrypted, not even us can access it.</p>
+                        <p className="text-muted-foreground text-sm">Datele tale sunt criptate, nici măcar noi nu le putem accesa.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <Sparkles className="size-4" />
 
-                            <h3 className="text-sm font-medium">AI Powered</h3>
+                            <h3 className="text-sm font-medium">AI</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">Agent is capable of taking full control of your business.</p>
+                        <p className="text-muted-foreground text-sm">Agentul este capabil să preia controlul complet al afacerii tale.</p>
                     </div>
                 </div>
             </div>

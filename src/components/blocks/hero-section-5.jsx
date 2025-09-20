@@ -11,70 +11,68 @@ export function HeroSection() {
         <main className="overflow-x-hidden">
             <section>
                 <div className="py-20 md:pb-32 lg:pb-20 lg:pt-32">
-                    <div
-                        className="relative z-10 mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
-                        <div
-                            className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-                            <h1
-                                className="mt-8 max-w-2xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl">Easy to use, powerful and flexible</h1>
-                            <p className="mt-8 max-w-2xl text-balance text-lg">Agentic business management tailored to your needs. Collaborate and get things done faster than ever or let the agent take full control.</p>
+                    <div className="mx-auto max-w-7xl px-3 lg:px-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                            {/* Left column - Text content */}
+                            <div className="text-center lg:text-left">
+                                <h1 className="mt-8 max-w-2xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl">
+                                    Simplifica administrarea afacerii
+                                </h1>
+                                <p className="mt-8 max-w-2xl text-balance text-lg">
+                                    Managementul inteligent al afacerii adaptat nevoilor tale. Colaborează și finalizează sarcinile mai rapid ca niciodată sau lasă agentul să preia controlul complet.
+                                </p>
 
-                            <div
-                                className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                {/* <Button asChild size="lg" className="h-12 rounded-full pl-5 pr-3 text-base">
-                                    <Link to="#link">
-                                        <span className="text-nowrap">Start Building</span>
-                                        <ChevronRight className="ml-1" />
+                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+                                    <div className="flex w-full max-w-sm items-center space-x-2">
+                                        <input
+                                            type="email"
+                                            placeholder="Anunță-mă când este disponibil"
+                                            className="flex h-12 flex-1 rounded-full border border-input bg-background px-4 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                                        />
+                                        <Button size="lg" className="h-12 w-12 rounded-full p-0">
+                                            <ChevronRight className="h-5 w-5" />
+                                        </Button>
+                                    </div>
+                                    <Button
+                                        key={2}
+                                        asChild
+                                        size="lg"
+                                        variant="ghost"
+                                        className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5">
+                                    <Link to="/select">
+                                        <span className="text-nowrap">Vezi demo</span>
                                     </Link>
-                                </Button> */}
-                                <div className="flex w-full max-w-sm items-center space-x-2">
-                                    <input
-                                        type="email"
-                                        placeholder="Notify me when it's available"
-                                        className="flex h-12 flex-1 rounded-full border border-input bg-background px-4 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                                    />
-                                    <Button size="lg" className="h-12 w-12 rounded-full p-0">
-                                        <ChevronRight className="h-5 w-5" />
                                     </Button>
                                 </div>
-                                <Button
-                                    key={2}
-                                    asChild
-                                    size="lg"
-                                    variant="ghost"
-                                    className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5">
-                                    <Link to="/select">
-                                        <span className="text-nowrap">See demo</span>
-                                    </Link>
-                                </Button>
+                                
+                                {/* Industry chips */}
+                                <div className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                                    <span className="text-sm text-muted-foreground">Perfect pentru:</span>
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                            Clinici Dentare
+                                        </span>
+                                        <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                            Săli de Sport
+                                        </span>
+                                        <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
+                                            Hoteluri
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            {/* Industry chips */}
-                            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-                                <span className="text-sm text-muted-foreground">Perfect for:</span>
-                                <div className="flex flex-wrap gap-2">
-                                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
-                                        Dental Clinics
-                                    </span>
-                                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
-                                        Gyms
-                                    </span>
-                                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
-                                        Hotels
-                                    </span>
+
+                            {/* Right column - Hero image */}
+                            <div className="flex justify-center lg:justify-end">
+                                <div className="relative">
+                                    <img
+                                        src="/hero.png"
+                                        alt="Hero dashboard"
+                                        className="w-full max-w-lg h-auto rounded-2xl shadow-2xl"
+                                    />
                                 </div>
                             </div>
                         </div>
-                    </div>
-                        <div className="aspect-[2/3] absolute inset-1 overflow-hidden rounded-3xl border border-black/10 sm:aspect-video lg:rounded-[3rem] dark:border-white/5">
-                        <video
-                            className="size-full object-cover opacity-50 invert dark:opacity-50 dark:invert-0 dark:lg:opacity-75 scale-125"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            src="/video.mov" type="video/quicktime" 
-                        />
                     </div>
                 </div>
             </section>

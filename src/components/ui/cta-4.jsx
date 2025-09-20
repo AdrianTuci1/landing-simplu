@@ -3,17 +3,17 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const defaultItems = [
-  "Instant access",
-  "24/7 Support",
-  "Top of the line design",
-  "Seamless AI integration",
-  "Tailored to your needs",
+  "Acces instant",
+  "Suport 24/7",
+  "Design de top",
+  "Integrare AI fără cusături",
+  "Adaptat la nevoile tale",
 ];
 
 export const Cta4 = ({
-  title = "Try Simplu now",
-  description = "Start working with us, 30 days free of charge. No credit card required.",
-  buttonText = "Get Started",
+  title = "Încearcă Simplu acum",
+  description = "Începe să lucrezi cu noi, 30 de zile gratuit. Nu este necesară nicio card de credit.",
+  buttonText = "Începe",
   buttonUrl = "https://shadcnblocks.com",
   items = defaultItems
 }) => {

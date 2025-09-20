@@ -5,16 +5,33 @@ import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
 import { useScroll, motion } from 'motion/react'
 import { TextEffect } from './ui/text-effect'
+import { redirectToCognitoSignup, redirectToCognitoLogin, isAuthenticated as checkAuth } from '@/lib/auth'
 
 const menuItems = [
-    { name: 'Solution', href: '/solution' },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Soluție', href: '/solution' },
+    { name: 'Prețuri', href: '/pricing' },
 ]
 
 const Navbar = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [scrolled, setScrolled] = React.useState(false)
     const { scrollYProgress } = useScroll()
+    const [isAuthenticated, setIsAuthenticated] = React.useState(false)
+
+    React.useEffect(() => {
+        // Check if user is authenticated using the auth utility function
+        const checkAuthStatus = () => {
+            setIsAuthenticated(checkAuth());
+        };
+        
+        checkAuthStatus();
+        
+        // Listen for storage changes to update auth status
+        const handleStorageChange = () => checkAuthStatus();
+        window.addEventListener('storage', handleStorageChange);
+        
+        return () => window.removeEventListener('storage', handleStorageChange);
+    }, []);
 
     React.useEffect(() => {
         const unsubscribe = scrollYProgress.on('change', (latest) => {
@@ -27,11 +44,11 @@ const Navbar = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="group fixed z-20 w-full pt-2">
+                className="group fixed top-0 z-20 w-full">
                 <div
                     className={cn(
-                        'mx-auto max-w-7xl rounded-3xl px-6 transition-all duration-300 lg:px-12',
-                        scrolled && 'bg-background/50 backdrop-blur-2xl'
+                        'w-full bg-background border-b px-6 transition-all duration-300',
+                        scrolled && 'shadow-sm'
                     )}>
                     <motion.div
                         key={1}
@@ -69,7 +86,7 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        <div
+                            <div
                             className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                             <div className="lg:hidden">
                                 <ul className="space-y-6 text-base">
@@ -88,14 +105,30 @@ const Navbar = () => {
                                 className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button asChild variant="outline" size="sm">
                                     <Link to="/select">
-                                        <span>Try now</span>
+                                        <span>Încearcă acum</span>
                                     </Link>
                                 </Button>
-                                <Button asChild size="sm">
-                                    <Link to="#">
-                                        <span>Sign Up</span>
-                                    </Link>
-                                </Button>
+                                {isAuthenticated ? (
+                                    <Button size="sm" onClick={() => {
+                                        // Clear authentication tokens
+                                        localStorage.removeItem('auth_token');
+                                        sessionStorage.removeItem('auth_token');
+                                        setIsAuthenticated(false);
+                                        // Redirect to home page
+                                        window.location.href = '/';
+                                    }}>
+                                        <span>Deconectare</span>
+                                    </Button>
+                                ) : (
+                                    <Button size="sm" onClick={() => {
+                                        console.log("Sign in clicked - using direct Cognito redirect");
+                                        // Get the current host for redirect after authentication
+                                        const currentHost = window.location.origin;
+                                        redirectToCognitoLogin(currentHost);
+                                    }}>
+                                        <span>Conectare</span>
+                                    </Button>
+                                )}
                             </div>
                         </div>
                     </motion.div>

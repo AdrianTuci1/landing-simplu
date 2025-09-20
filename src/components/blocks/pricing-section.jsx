@@ -48,17 +48,17 @@ function PricingSection({
       <div className="w-full max-w-5xl mx-auto">
         <div className="flex flex-col items-center gap-4 mb-12">
           <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
-            Simple, transparent pricing
+            Prețuri simple și transparente
           </h2>
           <div
             className="inline-flex items-center p-1.5 bg-white dark:bg-zinc-800/50 rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm">
-            {["Monthly", "Yearly"].map((period) => (
+            {["Lunar", "Anual"].map((period) => (
               <button
                 key={period}
-                onClick={() => setIsYearly(period === "Yearly")}
+                onClick={() => setIsYearly(period === "Anual")}
                 className={cn(
                   "px-8 py-2.5 text-sm font-medium rounded-full transition-all duration-300",
-                  (period === "Yearly") === isYearly
+                  (period === "Anual") === isYearly
                     ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-lg"
                     : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
                 )}>
@@ -110,7 +110,7 @@ function PricingSection({
                       ${isYearly ? tier.price.yearly : tier.price.monthly}
                     </span>
                     <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                      /{isYearly ? "year" : "month"}
+                      /{isYearly ? "an" : "lună"}
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
@@ -148,12 +148,12 @@ function PricingSection({
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {tier.highlight ? (
                       <>
-                        Buy now
+                        Cumpără acum
                         <ArrowRightIcon className="w-4 h-4" />
                       </>
                     ) : (
                       <>
-                        Get started
+                        Începe
                         <ArrowRightIcon className="w-4 h-4" />
                       </>
                     )}

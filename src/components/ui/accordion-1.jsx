@@ -142,43 +142,43 @@ export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
 const faqData = [
   {
     id: "item-1",
-    question: "What is Simplu?",
-    answer: "Simplu is a modern appointment management system that allows you to manage your appointments and clients in one place."
+    question: "Ce este Simplu?",
+    answer: "Simplu este un sistem modern de gestionare a programărilor care îți permite să îți gestionezi programările și clienții într-un singur loc."
   },
   {
     id: "item-3",
-    question: "What makes Simplu different from other managemen platforms?",
-    answer: "Unlike traditional management platforms, Simplu integrates AI directly into the management workflow. This means that all your daily tasks can be handled automatically so you can focus on delivering the service."
+    question: "Ce face Simplu diferit de alte platforme de management?",
+    answer: "Spre deosebire de platformele tradiționale de management, Simplu integrează AI direct în workflow-ul de management. Aceasta înseamnă că toate sarcinile tale zilnice pot fi gestionate automat, astfel încât să te poți concentra pe oferirea serviciului."
   },
   {
     id: "item-4",
-    question: "Can I customize the AI agent's behavior?",
-    answer: "Yes! The AI agent learns from your content style, brand guidelines, and preferences. You can set specific parameters, provide examples, and train it to match your unique voice and requirements."
+    question: "Pot personaliza comportamentul agentului AI?",
+    answer: "Da! Agentul AI învață din stilul tău de conținut, ghidurile de brand și preferințele tale. Poți seta parametri specifici, poți oferi exemple și îl poți antrena să se potrivească cu vocea și cerințele tale unice."
   },
   {
     id: "item-5",
-    question: "What can the AI agent do?",
-    answer: "At the moment, the AI agent can handle all your daily tasks, such as: scheduling appointments received from whatsapp, phone calls, emails. It can send SMS to your clients to remind them of their appointments, can propose price changes, communicate with housekeepers and more."
+    question: "Ce poate face agentul AI?",
+    answer: "În acest moment, agentul AI poate gestiona toate sarcinile tale zilnice, cum ar fi: programarea programărilor primite prin WhatsApp, apeluri telefonice, emailuri. Poate trimite SMS clienților tăi pentru a le reaminti de programări, poate propune modificări de preț, poate comunica cu menajerele și multe altele."
   },
   {
     id: "item-6",
-    question: "Is Simplu suitable for large enterprises?",
-    answer: "Absolutely! Simplu is designed to scale from small businesses to large enterprises. We offer enterprise-grade security, advanced user management and muliple locations support."
+    question: "Este Simplu potrivit pentru întreprinderile mari?",
+    answer: "Absolut! Simplu este conceput să se extindă de la afacerile mici la întreprinderile mari. Oferim securitate la nivel de întreprindere, management avansat al utilizatorilor și suport pentru multiple locații."
   },
   {
     id: "item-7",
-    question: "Can i bring my own website?",
-    answer: "At this moment, we don't support bringing your own website, but we plan to do that in the future."
+    question: "Pot să îmi aduc propriul website?",
+    answer: "În acest moment, nu suportăm să îți aduci propriul website, dar planificăm să facem asta în viitor."
   },
   {
     id: "item-8",
-    question: "It works well with other plaforms such as Booking.com, Airbnb, etc?",
-    answer: "At this moment, we couldn't integrate with other platforms, but we plan to do that in the future."
+    question: "Funcționează bine cu alte platforme precum Booking.com, Airbnb, etc?",
+    answer: "În acest moment, nu am putut să ne integrăm cu alte platforme, dar planificăm să facem asta în viitor."
   },
   {
     id: "item-9",
-    question: "Do you take also commissions?",
-    answer: "The third party payment gateway takes commissions, we only take a monthly fee for the service."
+    question: "Luați și comisioane?",
+    answer: "Gateway-ul de plată terț ia comisioane, noi luăm doar o taxă lunară pentru serviciu."
   },
 ];
 
@@ -188,10 +188,10 @@ export const Accordion1 = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            Întrebări Frecvente
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Everything you need to know about Simplu management system.
+            Tot ce trebuie să știi despre sistemul de management Simplu.
           </p>
         </div>
         
