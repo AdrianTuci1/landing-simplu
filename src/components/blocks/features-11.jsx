@@ -40,7 +40,7 @@ export function Features11() {
                     <Card
                         className="group overflow-hidden shadow-zinc-950/5 sm:col-span-2 sm:rounded-none sm:rounded-tr-xl">
                         <p
-                            className="mx-auto my-6 max-w-md text-balance px-6 text-center text-lg font-semibold sm:text-2xl md:p-6">UX avansat, găsește instant ceea ce ai nevoie.</p>
+                            className="mx-auto my-6 max-w-md text-balance px-6 text-center text-lg font-semibold sm:text-2xl md:p-6">UI/UX profesional, găsește instant ceea ce ai nevoie.</p>
 
                         <CardContent className="mt-auto h-fit">
                             <div className="relative mb-6 sm:mb-0">
@@ -48,13 +48,13 @@ export function Features11() {
                                     className="absolute -inset-6 [background:radial-gradient(50%_75%_at_75%_50%,transparent,hsl(var(--background))_100%)]"></div>
                                 <div className="aspect-76/59 overflow-hidden rounded-r-lg border">
                                     <img
-                                        src="https://tailark.com/_next/image?url=%2Forigin-cal-dark.png&w=3840&q=75"
+                                        src="/avansat.png"
                                         className="hidden dark:block"
                                         alt="payments illustration dark"
                                         width={1207}
                                         height={929} />
                                     <img
-                                        src="https://tailark.com/_next/image?url=%2Forigin-cal.png&w=3840&q=75"
+                                        src="/avansat.png"
                                         className="shadow dark:hidden"
                                         alt="payments illustration light"
                                         width={1207}
@@ -66,7 +66,7 @@ export function Features11() {
                     <Card
                         className="group p-6 shadow-black/5 sm:col-span-2 sm:rounded-none sm:rounded-bl-xl md:p-12">
                         <p
-                            className="mx-auto mb-12 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl">Alege propriul domeniu.</p>
+                            className="mx-auto mb-12 max-w-md text-balance text-center text-lg font-semibold sm:text-2xl">Usor de retinut.</p>
 
                         <div className="flex justify-center">
                             <div
@@ -76,7 +76,7 @@ export function Features11() {
                                         <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                                     </svg>
                                     <span className="text-sm font-medium text-gray-600 dark:text-gray-300">https://</span>
-                                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">your-business.com</span>
+                                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">afacerea-ta.simplu.io</span>
                                 </div>
                             </div>
                         </div>

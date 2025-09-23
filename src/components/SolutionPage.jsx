@@ -20,7 +20,12 @@ const SolutionPage = () => {
     {
       title: "Vânzări și facturare integrate",
       description: "Optimizează operațiunile tale de business cu urmărirea vânzărilor integrate și facturarea automată. Gestionează clienții, urmărește plățile și generează facturi profesionale.",
-      image: "/sales.png"
+      image: "/vanzare.png"
+    },
+    {
+      title: "Carduri de acces",
+      description: "Ofera chei de acces clientilor tai chiar in web sau ios, android. Asigura prezenta 100% la clase sau servicii cu agentul conversational.",
+      image: "/phone-mock.png"
     },
     {
       title: "Pagină web de prezentare",

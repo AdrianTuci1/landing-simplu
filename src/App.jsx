@@ -26,7 +26,7 @@ function App() {
         <Footer 
         brand={{ 
           name: 'Simplu', 
-          description: 'Simplu is a management system with with a top of the line AI agent that sits on top of the infrastructure and is capable of taking over all your daily tasks. ' 
+          description: 'Simplu este un sistem de management cu un agent AI de ultimă generație care se află deasupra infrastructurii și este capabil să preia toate sarcinile tale zilnice.' 
         }} 
         socialLinks={[
           { name: 'X', href: 'https://twitter.com/simplu' },
@@ -34,34 +34,34 @@ function App() {
         ]} 
         columns={[
           {
-            title: "Product",
+            title: "Produs",
             links: [
-              { name: "Features", Icon: Settings, href: "#features" },
-              { name: "Pricing", Icon: FileText, href: "#pricing" },
-              { name: "Integrations", Icon: Settings, href: "#integrations" },
+              { name: "Funcționalități", Icon: Settings, href: "#features" },
+              { name: "Prețuri", Icon: FileText, href: "#pricing" },
+              { name: "Integrări", Icon: Settings, href: "#integrations" },
               { name: "API", Icon: Settings, href: "#api" }
             ]
           },
           {
-            title: "Company",
+            title: "Companie",
             links: [
-              { name: "About", Icon: Users, href: "#about" },
+              { name: "Despre", Icon: Users, href: "#about" },
               { name: "Blog", Icon: FileText, href: "#blog" },
-              { name: "Careers", Icon: Users, href: "#careers" },
+              { name: "Cariere", Icon: Users, href: "#careers" },
               { name: "Contact", Icon: Mail, href: "#contact" }
             ]
           },
           {
-            title: "Support",
+            title: "Suport",
             links: [
-              { name: "Help Center", Icon: HelpCircle, href: "#help" },
-              { name: "Documentation", Icon: FileText, href: "#docs" },
+              { name: "Centru de Ajutor", Icon: HelpCircle, href: "#help" },
+              { name: "Documentație", Icon: FileText, href: "#docs" },
               { name: "Status", Icon: Settings, href: "#status" },
-              { name: "Contact Us", Icon: Mail, href: "#contact" }
+              { name: "Contactează-ne", Icon: Mail, href: "#contact" }
             ]
           }
         ]} 
-        copyright="© 2025 Simplu. All rights reserved." 
+        copyright="© 2025 Simplu. Toate drepturile rezervate." 
         />
     </Router>
   )

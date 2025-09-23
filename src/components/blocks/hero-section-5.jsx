@@ -1,9 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
-import { cn } from '@/lib/utils'
 import { ChevronRight } from 'lucide-react'
 
 export function HeroSection() {
@@ -14,7 +12,7 @@ export function HeroSection() {
                     <div className="mx-auto max-w-7xl px-3 lg:px-12">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                             {/* Left column - Text content */}
-                            <div className="text-center lg:text-left">
+                            <div className="text-start lg:text-start">
                                 <h1 className="mt-8 max-w-2xl text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl">
                                     Simplifica administrarea afacerii
                                 </h1>
@@ -63,8 +61,19 @@ export function HeroSection() {
                             </div>
 
                             {/* Right column - Hero image */}
-                            <div className="flex justify-center lg:justify-end">
-                                <div className="relative">
+                            <div className="relative -mx-3 lg:-mx-12 min-h-[550px] lg:h-full h-full">
+                                {/* Background overlay for entire right column */}
+                                <div className="absolute inset-0 z-0">
+                                    <div 
+                                        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100 mix-blend-overlay"
+                                        style={{
+                                            backgroundImage: "url('/overlaylanding.png')",
+                                        }}
+                                    />
+                                </div>
+                                
+                                {/* Centered hero image */}
+                                <div className="relative z-10 flex items-center justify-center h-full px-3 lg:px-12">
                                     <img
                                         src="/hero.png"
                                         alt="Hero dashboard"
