@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
+import { Card, CardTitle, CardDescription } from './ui/card';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '../lib/utils';
+import { FaTooth, FaBed, FaDumbbell } from 'react-icons/fa';
 
 const SolutionPage = () => {
   const [activeAccordion, setActiveAccordion] = useState(0);
@@ -15,7 +17,7 @@ const SolutionPage = () => {
     {
       title: "Multiple locații",
       description: "Gestionează și prezintă multiple locații într-un singur loc",
-      image: "/location.png"
+      image: "/hero.png"
     },
     {
       title: "Vânzări și facturare integrate",
@@ -40,73 +42,128 @@ const SolutionPage = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="mt-20">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {/* Card 1 - Dashboard */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
-              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                <img src="/dashboard.png" alt="Dashboard" className="w-10 h-10" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Management clinica
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Platforma colaborativa cu asistent AI. Primeste date in timp real si lasa agentul sa preia programari
-                din surse multiple.
-              </p>
-              <Button size="sm" variant="outline" className="w-full">
-                Vezi Live
-              </Button>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Card 1 - Dashboard styled like SelectPage (4/3) */}
+            <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 border-0 bg-white/90 backdrop-blur-sm aspect-[4/3] group cursor-pointer">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url("/stoma.jpg")' }}
+              ></div>
+              {/* Text fade overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
+              {/* Extra text fade overlay */}
+              <div className="absolute top-0 left-0 right-0 h-2/3 bg-gradient-to-b from-black/40 to-transparent"></div>
 
-            {/* Card 2 - Multiple Locations */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
-              <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                <img src="/location.png" alt="Multiple Locations" className="w-10 h-10" />
+              <div className="relative z-10 h-full flex flex-col p-6">
+                {/* Top section - Icon and Title */}
+                <div className="flex items-start space-x-3 mb-4">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="text-xl text-white">
+                      <FaTooth />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl font-bold text-white drop-shadow-lg">
+                      Management clinica
+                    </CardTitle>
+                  </div>
+                </div>
+                {/* Middle section - Description */}
+                <div className="flex-1 mb-4">
+                  <CardDescription className="text-white/90 text-base leading-relaxed drop-shadow-md">
+                    Platforma colaborativa cu asistent AI. Primeste date in timp real si lasa agentul sa preia programari din surse multiple.
+                  </CardDescription>
+                </div>
+                {/* Bottom section - CTA */}
+                <div className="flex items-center justify-end">
+                  <div className="flex items-center text-white/80 group-hover:text-white transition-colors">
+                    <span className="font-medium text-base drop-shadow-md">Vezi Live</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Management hotel
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Administrează multiple locații într-o interfață. Obtine date in timp real si lasa agentul
-                sa se sincronizeze cu platformele externe. 
-              </p>
-              <Button size="sm" variant="outline" className="w-full">
-                Vezi Live
-              </Button>
-            </div>
+              {/* Hover gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+            </Card>
 
-            {/* Card 3 - Sales & Billing */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
-              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                <img src="/sales.png" alt="Sales & Billing" className="w-10 h-10" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Management fitness
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Ofera chei de acces clientilor tai chiar in web sau ios, android. Asigura prezenta 100% la clase sau
-                servicii cu agentul conversational.
-              </p>
-              <Button size="sm" variant="outline" className="w-full">
-                Vezi Live
-              </Button>
-            </div>
+            {/* Card 2 - Multiple Locations styled like SelectPage (4/3) */}
+            <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 border-0 bg-white/90 backdrop-blur-sm aspect-[4/3] group cursor-pointer">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url("/hotel.jpg")' }}
+              ></div>
+              {/* Text fade overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
+              {/* Extra text fade overlay */}
+              <div className="absolute top-0 left-0 right-0 h-2/3 bg-gradient-to-b from-black/40 to-transparent"></div>
 
-            {/* Card 4 - Website Presentation */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
-              <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
-                <img src="/hero.png" alt="Website Presentation" className="w-10 h-10" />
+              <div className="relative z-10 h-full flex flex-col p-6">
+                <div className="flex items-start space-x-3 mb-4">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="text-xl text-white">
+                      <FaBed />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl font-bold text-white drop-shadow-lg">
+                      Management hotel
+                    </CardTitle>
+                  </div>
+                </div>
+                <div className="flex-1 mb-4">
+                  <CardDescription className="text-white/90 text-base leading-relaxed drop-shadow-md">
+                    Administrează multiple locații într-o interfață. Obține date în timp real și lasă agentul să se sincronizeze cu platformele externe.
+                  </CardDescription>
+                </div>
+                <div className="flex items-center justify-end">
+                  <div className="flex items-center text-white/80 group-hover:text-white transition-colors">
+                    <span className="font-medium text-base drop-shadow-md">Vezi Live</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Management imobiliare
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Previzualizeaza propietatile pe harta si stocheaza documentele chiar pe pin-urile acestora.
-              </p>
-              <Button size="sm" variant="outline" className="w-full">
-                Află mai mult
-              </Button>
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+            </Card>
+
+            {/* Card 3 - Sales & Billing styled like SelectPage (4/3) */}
+            <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 border-0 bg-white/90 backdrop-blur-sm aspect-[4/3] group cursor-pointer">
+              {/* Background image */}
+              <div 
+                className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url("/gym.jpeg")' }}
+              ></div>
+              {/* Text fade overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
+              {/* Extra text fade overlay */}
+              <div className="absolute top-0 left-0 right-0 h-2/3 bg-gradient-to-b from-black/40 to-transparent"></div>
+
+              <div className="relative z-10 h-full flex flex-col p-6">
+                <div className="flex items-start space-x-3 mb-4">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="text-xl text-white">
+                      <FaDumbbell />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl font-bold text-white drop-shadow-lg">
+                      Management fitness
+                    </CardTitle>
+                  </div>
+                </div>
+                <div className="flex-1 mb-4">
+                  <CardDescription className="text-white/90 text-base leading-relaxed drop-shadow-md">
+                    Ofera chei de acces clientilor tai chiar in web sau iOS, Android. Asigura prezenta 100% la clase sau servicii cu agentul conversational.
+                  </CardDescription>
+                </div>
+                <div className="flex items-center justify-end">
+                  <div className="flex items-center text-white/80 group-hover:text-white transition-colors">
+                    <span className="font-medium text-base drop-shadow-md">Vezi Live</span>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-700 opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+            </Card>
+
           </div>
 
         </div>

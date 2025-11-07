@@ -1,15 +1,13 @@
 import { PricingSection } from './blocks/pricing-section'
-import { Button } from './ui/button'
-import { Badge } from './ui/badge'
-import { ArrowRightIcon, CheckIcon, StarIcon } from "@radix-ui/react-icons"
+import { StarIcon } from "@radix-ui/react-icons"
 
 const tiers = [
     {
         name: 'Pro',
         description: 'Pachetul profesional cu toate funcționalitățile esențiale',
         price: {
-            monthly: 550,
-            yearly: 5280
+            monthly: 220,
+            yearly: 2000
         },
         features: [
             {
@@ -71,7 +69,7 @@ const tiers = [
                 included: true
             },
             {
-                name: '5000 SMS lunar',
+                name: 'Sms la cerere',
                 description: 'Notificări și comunicare prin SMS extinsă',
                 included: true
             },
@@ -104,8 +102,8 @@ const tiers = [
         name: 'Apeluri AI',
         description: '3500 de minute de apeluri AI pe lună',
         price: {
-            monthly: 1500,
-            yearly: 14400
+            monthly: 1000,
+            yearly: 10000
         },
         features: [
             {

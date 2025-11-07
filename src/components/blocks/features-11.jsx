@@ -3,7 +3,7 @@ import { Globe } from 'lucide-react'
 
 export function Features11() {
     return (
-        (<section className="dark:bg-muted/25 bg-zinc-50 py-16 md:py-32">
+        (<section className="py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="mx-auto grid gap-2 sm:grid-cols-5">
                     <Card

@@ -1,27 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage from '@/components/HomePage'
 import './App.css'
-import PricingPage from './components/PricingPage'
-import Navbar from '@/components/Navbar'
+// import PricingPage from './components/PricingPage'
+import VercelNavbar from '@/components/ui/vercel-navbar'
 import SolutionPage from './components/SolutionPage'
 import SelectPage from './components/SelectPage'
-import AuthCallback from './components/AuthCallback'
-import RouteTest from './components/RouteTest'
 import { Footer } from '@/components/blocks/footer'
 import { Mail, FileText, Users, Settings, HelpCircle } from "lucide-react";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <VercelNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/pricing" element={<PricingPage />} />
+        {/* <Route path="/pricing" element={<PricingPage />} /> */}
         <Route path="/solution" element={<SolutionPage />} />
         <Route path="/select" element={<SelectPage />} />
-        <Route path="/auth/callback" element={<AuthCallback />} />
-        <Route path="/route-test" element={<RouteTest />} />
-        <Route path="/error" element={<div className="min-h-screen flex items-center justify-center">Error: Authentication failed</div>} />
       </Routes>
         <Footer 
         brand={{ 

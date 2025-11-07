@@ -129,7 +129,7 @@ function PricingSection({
                     <span className={cn("text-4xl font-bold", tier.isEnterprise
                       ? "text-white"
                       : "text-zinc-900 dark:text-zinc-100")}>
-                      {tier.price.monthly === 'Custom' ? 'Custom' : `${tier.requiresBasic ? "+" : ""}RON${isYearly ? tier.price.yearly : tier.price.monthly}`}
+                      {tier.price.monthly === 'Custom' ? 'Custom' : `${tier.requiresBasic ? "+" : ""}€${isYearly ? tier.price.yearly : tier.price.monthly}`}
                     </span>
                     {tier.price.monthly !== 'Custom' && (
                       <span className={cn("text-sm", tier.isEnterprise
@@ -147,10 +147,10 @@ function PricingSection({
                   {isYearly && tier.price.yearly !== 'Custom' && (
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-sm text-zinc-400 line-through">
-                        {tier.requiresBasic ? "+" : ""}RON{tier.price.monthly * 12}
+                        {tier.requiresBasic ? "+" : ""}€{tier.price.monthly * 12}
                       </span>
                       <span className="text-xs text-green-600 dark:text-green-400 font-medium">
-                        Economisești RON{(tier.price.monthly * 12) - tier.price.yearly}
+                        Economisești €{(tier.price.monthly * 12) - tier.price.yearly}
                       </span>
                     </div>
                   )}

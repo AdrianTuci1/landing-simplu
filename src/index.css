@@ -85,6 +85,20 @@
   animation-delay: 1s;
 }
 
+.progress-indicator {
+  transform-origin: left;
+  animation: progress-bar 3s linear infinite;
+}
+
+@keyframes progress-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 .db-light-1 {
   offset-path: path("M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 25");
 }

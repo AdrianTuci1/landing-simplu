@@ -9,7 +9,7 @@ import { redirectToCognitoSignup, redirectToCognitoLogin, isAuthenticated as che
 
 const menuItems = [
     { name: 'Soluție', href: '/solution' },
-    { name: 'Prețuri', href: '/pricing' },
+    // { name: 'Prețuri', href: '/pricing' },
 ]
 
 const Navbar = () => {
@@ -141,8 +141,8 @@ const Navbar = () => {
 const Logo = ({ className }) => {
     return (
         <div className="flex items-center gap-2">
-            <img src="/Frame-1.png" alt="Simplu" className={cn('h-5 w-auto', className)} />
-            <TextEffect className="text-2xl font-bold">Simplu</TextEffect>
+            <img src="/Group-1.png" alt="Simplu" className={cn('h-7 w-auto', className)} />
+            <TextEffect className="text-2xl font-bold">simplu</TextEffect>
         </div>
     );
 }
