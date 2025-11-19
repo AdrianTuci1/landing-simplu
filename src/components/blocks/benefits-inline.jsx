@@ -2,7 +2,7 @@ import { ShieldCheck, Maximize2, Puzzle } from 'lucide-react'
 
 const items = [
     { title: 'scalable', Icon: Maximize2 },
-    { title: 'extensible', Icon: Puzzle },
+    { title: 'expandable', Icon: Puzzle },
     { title: 'secure', Icon: ShieldCheck },
 ]
 

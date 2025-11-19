@@ -241,7 +241,7 @@ export const VercelNavbar = () => {
 
           <div className="hidden items-center gap-3 lg:flex">
             <Button asChild variant="outline" size="sm">
-              <Link to="/select">Încearcă acum</Link>
+              <Link to="/select">Sign in</Link>
             </Button>
             {isAuthenticated ? (
               <Button size="sm" onClick={handleLogout}>
@@ -249,7 +249,7 @@ export const VercelNavbar = () => {
           </Button>
             ) : (
               <Button size="sm" onClick={handleLogin}>
-                Conectare
+                Start for free
           </Button>
             )}
           </div>

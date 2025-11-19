@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react'
 
 const menuItems = [
-    { id: 'clinici', label: 'Pentru clinici', video: '/1106.mp4' },
-    { id: 'hoteluri', label: 'Pentru hoteluri', video: '/1107.mp4' },
-    { id: 'fitness', label: 'Pentru sali de fitness', video: '/video-fitness.mp4' },
-    { id: 'mesaje', label: 'Mesaje automate', video: '/video-mesaje.mp4' }
+    { id: 'data', label: 'Data', image: '/hero/hero1.png' },
+    { id: 'calendar', label: 'Calendar', image: '/hero/hero2.png' },
+    { id: 'automations', label: 'Workflows', image: '/hero/hero3.png' },
+    { id: 'reporting', label: 'Reporting', image: '/hero/hero4.png' }
 ]
 
 export function Features() {
     const [activeTab, setActiveTab] = useState('clinici')
-    const activeVideo = menuItems.find(item => item.id === activeTab)?.video || menuItems[0].video
+    const [videoError, setVideoError] = useState(false)
+    const activeItem = menuItems.find(item => item.id === activeTab) || menuItems[0]
+    const activeVideo = activeItem.video
+    const activeImage = activeItem.image
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -19,6 +22,11 @@ export function Features() {
         }, 3000)
 
         return () => clearTimeout(timeout)
+    }, [activeTab])
+
+    // Reset video error when tab changes
+    useEffect(() => {
+        setVideoError(false)
     }, [activeTab])
 
     return (
@@ -69,17 +77,34 @@ export function Features() {
                         <div className="pointer-events-none absolute inset-0 -left-2 -right-2 -top-2 -bottom-2 rounded-[18px] bg-gray-200/70" aria-hidden="true"></div>
                         <div className="pointer-events-none absolute inset-0 -left-2 -right-2 -top-2 -bottom-2 rounded-[18px] bg-gradient-to-t from-white via-white/80 to-transparent" aria-hidden="true"></div>
                         <div className="aspect-[90/50] relative overflow-hidden rounded-[12px]">
-                            <video
-                                key={activeTab}
-                                src={activeVideo}
-                                className="h-full w-full object-cover"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                            >
-                                Browserul tău nu suportă tag-ul video.
-                            </video>
+                            {activeVideo && !videoError ? (
+                                <video
+                                    key={activeTab}
+                                    src={activeVideo}
+                                    className="h-full w-full object-cover"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    onError={() => {
+                                        // Fallback to image if video fails to load
+                                        setVideoError(true)
+                                    }}
+                                >
+                                    Browserul tău nu suportă tag-ul video.
+                                </video>
+                            ) : null}
+                            {(activeImage && (!activeVideo || videoError)) && (
+                                <img
+                                    key={`${activeTab}-img`}
+                                    src={activeImage}
+                                    alt={activeItem.label}
+                                    className="h-full w-full object-cover"
+                                    onError={(e) => {
+                                        e.target.style.display = 'none'
+                                    }}
+                                />
+                            )}
                             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/70 to-transparent" aria-hidden="true"></div>
                         </div>
                     </div>

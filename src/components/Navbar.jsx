@@ -105,7 +105,7 @@ const Navbar = () => {
                                 className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button asChild variant="outline" size="sm">
                                     <Link to="/select">
-                                        <span>Încearcă acum</span>
+                                        <span>Sign in</span>
                                     </Link>
                                 </Button>
                                 {isAuthenticated ? (
@@ -126,7 +126,7 @@ const Navbar = () => {
                                         const currentHost = window.location.origin;
                                         redirectToCognitoLogin(currentHost);
                                     }}>
-                                        <span>Conectare</span>
+                                        <span>Start for free</span>
                                     </Button>
                                 )}
                             </div>

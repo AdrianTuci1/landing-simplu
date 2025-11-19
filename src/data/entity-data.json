@@ -1,0 +1,226 @@
+{
+  "clinici-dentare": {
+    "entities": [
+      {
+        "id": "pacient",
+        "title": "Pacient",
+        "type": "Standard",
+        "icon": "User",
+        "iconColor": "text-blue-600",
+        "iconBg": "bg-blue-100",
+        "attributes": [
+          { "name": "Nume", "icon": "FileText" },
+          { "name": "Adresă", "icon": "MapPin" },
+          { "name": "Programare", "icon": "Calendar" }
+        ],
+        "moreAttributes": 6,
+        "connections": ["programari"]
+      },
+      {
+        "id": "programari",
+        "title": "Programări",
+        "type": "Standard",
+        "icon": "Calendar",
+        "iconColor": "text-purple-600",
+        "iconBg": "bg-purple-100",
+        "attributes": [
+          { "name": "Tratament", "icon": "Tag" },
+          { "name": "Data", "icon": "Calendar" },
+          { "name": "Ora", "icon": "Clock" },
+          { "name": "Pacient", "icon": "User" }
+        ],
+        "moreAttributes": 8,
+        "connections": ["pacient", "tratament"]
+      },
+      {
+        "id": "tratament",
+        "title": "Tratament",
+        "type": "Standard",
+        "icon": "Stethoscope",
+        "iconColor": "text-green-600",
+        "iconBg": "bg-green-100",
+        "attributes": [
+          { "name": "Nume", "icon": "FileText" },
+          { "name": "Preț", "icon": "DollarSign" },
+          { "name": "Medic", "icon": "User" }
+        ],
+        "moreAttributes": 5,
+        "connections": ["programari", "medic"]
+      },
+      {
+        "id": "medic",
+        "title": "Medic",
+        "type": "Standard",
+        "icon": "Users",
+        "iconColor": "text-amber-600",
+        "iconBg": "bg-amber-100",
+        "attributes": [
+          { "name": "Nume", "icon": "FileText" },
+          { "name": "Specializare", "icon": "Tag" },
+          { "name": "Programare", "icon": "Calendar" }
+        ],
+        "moreAttributes": 4,
+        "connections": ["tratament"]
+      }
+    ],
+    "tableData": {
+      "headers": ["Pacient", "Data programării", "Tratament", "Medic", "Status"],
+      "rows": [
+        { "patient": "Ion Popescu", "date": "15.01.2024", "treatment": "Curățare", "doctor": "Dr. Maria Ionescu", "status": "Confirmată" },
+        { "patient": "Ana Georgescu", "date": "16.01.2024", "treatment": "Extracție", "doctor": "Dr. Andrei Pop", "status": "Confirmată" },
+        { "patient": "Mihai Radu", "date": "17.01.2024", "treatment": "Albire", "doctor": "Dr. Elena Stoica", "status": "În așteptare" },
+        { "patient": "Laura Dumitru", "date": "18.01.2024", "treatment": "Consult", "doctor": "Dr. Maria Ionescu", "status": "Confirmată" }
+      ]
+    }
+  },
+  "hoteluri": {
+    "entities": [
+      {
+        "id": "client",
+        "title": "Client",
+        "type": "Standard",
+        "icon": "User",
+        "iconColor": "text-blue-600",
+        "iconBg": "bg-blue-100",
+        "attributes": [
+          { "name": "Nume", "icon": "FileText" },
+          { "name": "Email", "icon": "FileText" },
+          { "name": "Rezervare", "icon": "Calendar" }
+        ],
+        "moreAttributes": 5,
+        "connections": ["rezervari"]
+      },
+      {
+        "id": "rezervari",
+        "title": "Rezervări",
+        "type": "Standard",
+        "icon": "Calendar",
+        "iconColor": "text-purple-600",
+        "iconBg": "bg-purple-100",
+        "attributes": [
+          { "name": "Camera", "icon": "Building" },
+          { "name": "Check-in", "icon": "Calendar" },
+          { "name": "Check-out", "icon": "Calendar" },
+          { "name": "Client", "icon": "User" }
+        ],
+        "moreAttributes": 7,
+        "connections": ["client", "camera"]
+      },
+      {
+        "id": "camera",
+        "title": "Cameră",
+        "type": "Standard",
+        "icon": "Building",
+        "iconColor": "text-green-600",
+        "iconBg": "bg-green-100",
+        "attributes": [
+          { "name": "Număr", "icon": "FileText" },
+          { "name": "Tip", "icon": "Tag" },
+          { "name": "Preț", "icon": "DollarSign" },
+          { "name": "Disponibilitate", "icon": "Calendar" }
+        ],
+        "moreAttributes": 4,
+        "connections": ["rezervari", "servicii"]
+      },
+      {
+        "id": "servicii",
+        "title": "Servicii",
+        "type": "Custom",
+        "icon": "Tag",
+        "iconColor": "text-amber-600",
+        "iconBg": "bg-amber-100",
+        "attributes": [
+          { "name": "Nume serviciu", "icon": "FileText" },
+          { "name": "Preț", "icon": "DollarSign" },
+          { "name": "Cameră", "icon": "Building" }
+        ],
+        "moreAttributes": 3,
+        "connections": ["camera"]
+      }
+    ],
+    "tableData": {
+      "headers": ["Client", "Check-in", "Check-out", "Cameră", "Status"],
+      "rows": [
+        { "client": "Ion Popescu", "checkin": "20.01.2024", "checkout": "25.01.2024", "room": "101 - Deluxe", "status": "Confirmată" },
+        { "client": "Ana Georgescu", "checkin": "22.01.2024", "checkout": "24.01.2024", "room": "205 - Standard", "status": "Confirmată" },
+        { "client": "Mihai Radu", "checkin": "25.01.2024", "checkout": "28.01.2024", "room": "301 - Suite", "status": "În așteptare" },
+        { "client": "Laura Dumitru", "checkin": "26.01.2024", "checkout": "30.01.2024", "room": "102 - Deluxe", "status": "Confirmată" }
+      ]
+    }
+  },
+  "sali-fitness": {
+    "entities": [
+      {
+        "id": "membru",
+        "title": "Membru",
+        "type": "Standard",
+        "icon": "User",
+        "iconColor": "text-blue-600",
+        "iconBg": "bg-blue-100",
+        "attributes": [
+          { "name": "Nume", "icon": "FileText" },
+          { "name": "Abonament", "icon": "Tag" },
+          { "name": "Rezervare", "icon": "Calendar" }
+        ],
+        "moreAttributes": 4,
+        "connections": ["rezervari"]
+      },
+      {
+        "id": "rezervari",
+        "title": "Rezervări",
+        "type": "Standard",
+        "icon": "Calendar",
+        "iconColor": "text-purple-600",
+        "iconBg": "bg-purple-100",
+        "attributes": [
+          { "name": "Clasă", "icon": "Tag" },
+          { "name": "Data", "icon": "Calendar" },
+          { "name": "Ora", "icon": "Clock" },
+          { "name": "Membru", "icon": "User" }
+        ],
+        "moreAttributes": 5,
+        "connections": ["membru", "clasa"]
+      },
+      {
+        "id": "clasa",
+        "title": "Clasă",
+        "type": "Standard",
+        "icon": "Dumbbell",
+        "iconColor": "text-green-600",
+        "iconBg": "bg-green-100",
+        "attributes": [
+          { "name": "Nume", "icon": "FileText" },
+          { "name": "Durată", "icon": "Clock" },
+          { "name": "Preț", "icon": "DollarSign" },
+          { "name": "Antrenor", "icon": "User" }
+        ],
+        "moreAttributes": 3,
+        "connections": ["rezervari", "antrenor"]
+      },
+      {
+        "id": "antrenor",
+        "title": "Antrenor",
+        "type": "Standard",
+        "icon": "Users",
+        "iconColor": "text-amber-600",
+        "iconBg": "bg-amber-100",
+        "attributes": [
+          { "name": "Nume", "icon": "FileText" },
+          { "name": "Specializare", "icon": "Tag" },
+          { "name": "Clasă", "icon": "Dumbbell" }
+        ],
+        "moreAttributes": 4,
+        "connections": ["clasa"]
+      }
+    ],
+    "tableData": {
+      "headers": ["Membru", "Clasă", "Data", "Ora", "Antrenor"],
+      "rows": [
+        { "member": "Ion Popescu", "class": "Yoga", "date": "15.01.2024", "time": "18:00", "trainer": "Maria Ionescu" },
+        { "member": "Ana Georgescu", "class": "Pilates", "date": "16.01.2024", "time": "19:00", "trainer": "Andrei Pop" },
+        { "member": "Mihai Radu", "class": "CrossFit", "date": "17.01.2024", "time": "20:00", "trainer": "Elena Stoica" },
+        { "member": "Laura Dumitru", "class": "Zumba", "date": "18.01.2024", "time": "17:00", "trainer": "Maria Ionescu" }
+      ]
+    }
+  }
+}
