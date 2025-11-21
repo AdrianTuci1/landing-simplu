@@ -1,19 +1,19 @@
 const ScheduleMessage = () => (
   <section className="relative flex min-h-[80vh] items-center justify-center text-center">
     <div
-      className="pointer-events-none absolute inset-y-0 left-[40px] w-px bg-border"
+      className="pointer-events-none absolute inset-y-0 left-[40px] w-px bg-border hidden sm:block"
       aria-hidden
     />
     <div
-      className="pointer-events-none absolute inset-y-0 right-[40px] w-px bg-border"
+      className="pointer-events-none absolute inset-y-0 right-[40px] w-px bg-border hidden sm:block"
       aria-hidden
     />
     <div
-      className="pointer-events-none absolute bottom-0 left-[40px] right-[40px] z-20 border-b border-border border-dotted"
+      className="pointer-events-none absolute bottom-0 left-[40px] right-[40px] z-20 border-b border-border border-dotted hidden sm:block"
       aria-hidden
     />
     <div
-      className="pointer-events-none absolute inset-y-0 left-[40px] right-[40px] z-0 bg-[radial-gradient(circle,_rgba(148,_163,_184,_0.4)_1px,_transparent_1px)] bg-[length:16px_16px]"
+      className="pointer-events-none absolute inset-y-0 left-[40px] right-[40px] z-0 bg-[radial-gradient(circle,_rgba(148,_163,_184,_0.4)_1px,_transparent_1px)] bg-[length:16px_16px] hidden sm:block"
       aria-hidden
     />
     <div className="relative z-10 w-full max-w-5xl px-5 py-16 sm:px-6 sm:py-24">

@@ -10,36 +10,36 @@ const Section = () => {
   return (
     <section className="relative flex h-full items-stretch">
       <div
-        className="pointer-events-none absolute inset-y-0 left-[40px] w-px bg-border"
+        className="pointer-events-none absolute inset-y-0 left-[40px] w-px bg-border hidden sm:block"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-[40px] w-px bg-border"
+        className="pointer-events-none absolute inset-y-0 right-[40px] w-px bg-border hidden sm:block"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute bottom-0 left-[40px] right-[40px] z-20 border-b border-border border-dotted"
+        className="pointer-events-none absolute bottom-0 left-[40px] right-[40px] z-20 border-b border-border border-dotted hidden sm:block"
+        aria-hidden
+      />
+      {/* <div
+        className="pointer-events-none absolute inset-y-0 left-[153px] top-[10%] z-20 w-0 border-l border-dashed border-border/80 z-30 hidden sm:block"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-y-0 left-[153px] top-[10%] z-20 w-0 border-l border-dashed border-border/80 z-30 "
+        className="pointer-events-none absolute inset-y-0 right-[153px] top-[10%] w-0 border-r border-dashed border-border/80 z-30 hidden sm:block"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-[153px] top-[10%] w-0 border-r border-dashed border-border/80 z-30"
+        className="pointer-events-none absolute left-[40px] right-[40px] top-[calc(10%+18px)] left-0 right-0 h-0 border-t border-dashed border-border/80 z-30 hidden sm:block"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute left-[40px] right-[40px] top-[calc(10%+18px)] left-0 right-0 h-0 border-t border-dashed border-border/80 z-30"
+        className="pointer-events-none absolute left-[40px] right-[40px] bottom-[calc(5%-18px)] left-0 right-0 h-0 border-b border-dashed border-border/80 z-30 hidden sm:block"
         aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute left-[40px] right-[40px] bottom-[calc(5%-18px)] left-0 right-0 h-0 border-b border-dashed border-border/80 z-30"
-        aria-hidden
-      />
+      /> */}
       {/* Pattern hash-urat la 45 grade - stânga */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-[40px] z-20 right-[calc(50%+36rem+0rem)] top-[calc(10%+20px)] bottom-[calc(5%-18px)]"
+        className="pointer-events-none absolute inset-y-0 left-[40px] z-20 right-[calc(50%+36rem+0rem)] top-[calc(10%+20px)] bottom-[calc(5%-18px)] hidden sm:block"
         style={{
           backgroundImage: 'repeating-linear-gradient(-45deg, hsl(var(--border)), hsl(var(--border)) 1px, transparent 1px, transparent 10px)',
         }}
@@ -47,7 +47,7 @@ const Section = () => {
       />
       {/* Pattern hash-urat la 45 grade - dreapta */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-[calc(50%+36rem+0rem)] top-[calc(10%+20px)] right-[40px] bottom-[calc(5%-18px)] z-20"
+        className="pointer-events-none absolute inset-y-0 left-[calc(50%+36rem+0rem)] top-[calc(10%+20px)] right-[40px] bottom-[calc(5%-18px)] z-20 hidden sm:block"
         style={{
           backgroundImage: 'repeating-linear-gradient(-45deg, hsl(var(--border)), hsl(var(--border)) 1px, transparent 1px, transparent 10px)',
         }}
@@ -59,12 +59,12 @@ const Section = () => {
             <p className="text-4xl font-medium leading-relaxed text-foreground sm:text-4xl">
               Execute your retention strategy with precision.
               <span className="ml-2 text-muted-foreground">
-              Intuitive workflows for sales and service, integrate all your customer data, and build clear schedules, process payments and sales — all in one platform.
+                Intuitive workflows for sales and service, integrate all your customer data, and build clear schedules, process payments and sales — all in one platform.
               </span>
             </p>
           </header>
           <div className="bg-background/80 h-full">
-            <div className="grid h-full w-full grid-cols-1 divide-y divide-border border border-border md:grid-cols-[1fr_1.5fr_1fr] md:divide-y-0 md:divide-x">
+            <div className="grid h-full w-full grid-cols-1 divide-y divide-border border border-border md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr] md:divide-y-0 md:divide-x">
               <div className="flex h-full flex-col justify-start space-y-4 p-4">
                 <h3 className="text-3xl font-semibold text-foreground">
                   Advanced timeline
@@ -120,12 +120,12 @@ const Section = () => {
                   }}
                 />
               </div>
-              <div className="relative flex h-full flex-col overflow-hidden">
+              <div className="relative hidden lg:flex h-full flex-col overflow-hidden">
                 <span className="pointer-events-none absolute left-0 right-0 top-[55%] h-px bg-border" />
                 <div className="flex flex-1 items-center justify-center">
                   <div className="flex flex-col items-center gap-3">
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-40 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-60"
                     >
                       <div className="p-0.5 rounded bg-pink-100">
@@ -133,8 +133,8 @@ const Section = () => {
                       </div>
                       Beauty Salon
                     </Badge>
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-48 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-75"
                     >
                       <div className="p-0.5 rounded bg-blue-100">
@@ -142,8 +142,8 @@ const Section = () => {
                       </div>
                       Dental Clinics
                     </Badge>
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-56 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-100"
                     >
                       <div className="p-0.5 rounded bg-amber-100">
@@ -151,8 +151,8 @@ const Section = () => {
                       </div>
                       Hotel Management
                     </Badge>
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-48 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-75"
                     >
                       <div className="p-0.5 rounded bg-green-100">
@@ -160,8 +160,8 @@ const Section = () => {
                       </div>
                       Fitness Places
                     </Badge>
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-44 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-60"
                     >
                       <div className="p-0.5 rounded bg-purple-100">
@@ -172,7 +172,7 @@ const Section = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                <img
+                  <img
                     src="/logos/schedule.png"
                     alt="Mobile scheduling"
                     className="h-20 w-20 object-cover absolute bottom-[120px] right-[calc(50%-35px)]"
@@ -182,7 +182,7 @@ const Section = () => {
             </div>
           </div>
           <div className="bg-background/80 h-full">
-            <div className="grid h-full w-full grid-cols-1 divide-y divide-border border border-border md:grid-cols-[1fr_1.5fr_1fr] md:divide-y-0 md:divide-x">
+            <div className="grid h-full w-full grid-cols-1 divide-y divide-border border border-border md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr] md:divide-y-0 md:divide-x">
               <div className="flex h-full flex-col justify-start space-y-4 p-4">
                 <h3 className="text-3xl font-semibold text-foreground">
                   Connect to external services
@@ -198,7 +198,7 @@ const Section = () => {
                   className="h-full w-full object-contain"
                 />
               </div>
-              <div className="relative flex h-full flex-col overflow-hidden">
+              <div className="relative hidden lg:flex h-full flex-col overflow-hidden">
                 <span className="pointer-events-none absolute left-0 right-0 top-[55%] h-px bg-border" />
                 <div className="flex flex-1 items-stretch">
                   <div className="grid w-full grid-cols-2 gap-2 p-4">
@@ -251,7 +251,7 @@ const Section = () => {
             </div>
           </div>
           <div className="bg-background/80 h-full">
-            <div className="grid h-full w-full grid-cols-1 divide-y divide-border border border-border md:grid-cols-[1fr_1.5fr_1fr] md:divide-y-0 md:divide-x">
+            <div className="grid h-full w-full grid-cols-1 divide-y divide-border border border-border md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr] md:divide-y-0 md:divide-x">
               <div className="flex h-full flex-col justify-start space-y-4 p-4">
                 <h3 className="text-3xl font-semibold text-foreground">
                   Proper onboarding
@@ -267,12 +267,12 @@ const Section = () => {
                   className="h-full w-full object-cover min-h-[650px]"
                 />
               </div>
-              <div className="relative flex h-full flex-col overflow-hidden">
+              <div className="relative hidden lg:flex h-full flex-col overflow-hidden">
                 <span className="pointer-events-none absolute left-0 right-0 top-[55%] h-px bg-border" />
                 <div className="flex flex-1 items-center justify-center">
                   <div className="flex flex-col items-center gap-3">
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-48 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-60"
                     >
                       <div className="p-0.5 rounded bg-blue-100">
@@ -280,8 +280,8 @@ const Section = () => {
                       </div>
                       See availability
                     </Badge>
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-48 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-75"
                     >
                       <div className="p-0.5 rounded bg-green-100">
@@ -289,8 +289,8 @@ const Section = () => {
                       </div>
                       Select service
                     </Badge>
-                    <Badge 
-                      variant="outline" 
+                    <Badge
+                      variant="outline"
                       className="w-48 px-4 py-2 text-sm justify-start items-center gap-2 bg-white border-border text-foreground opacity-100"
                     >
                       <div className="p-0.5 rounded bg-purple-100">
@@ -301,7 +301,7 @@ const Section = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                <img
+                  <img
                     src="/logos/target.png"
                     alt="Mobile scheduling"
                     className="h-20 w-20 object-cover absolute bottom-[100px] right-[calc(50%-35px)]"

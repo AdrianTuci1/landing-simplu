@@ -25,14 +25,14 @@ const platformSections = [
       {
         title: "Data model",
         description: "Structură flexibilă pentru toate tipurile de clienți.",
-        href: "/#data-model",
+        href: "/data-model",
         icon: "/navicons/data-model.webp",
       },
 
       {
         title: "Apps & integrations",
         description: "Integrează-ți stack-ul în câteva clicuri.",
-        href: "/#integrations",
+        href: "/apps-integrations",
         icon: "/navicons/apps.webp",
       },
       {
@@ -49,7 +49,7 @@ const platformSections = [
       {
         title: "Workflows",
         description: "Automatizează procesele operaționale repetitive.",
-        href: "/#workflows",
+        href: "/workflows",
         icon: "/navicons/workflows.webp",
       },
       {
@@ -66,7 +66,7 @@ const platformSections = [
       {
         title: "Reporting",
         description: "Dă sens datelor cu rapoarte gata de folosire.",
-        href: "/#reporting",
+        href: "/reporting",
         icon: "/navicons/reporting.webp",
       },
     ],
@@ -77,7 +77,7 @@ const platformSections = [
       {
         title: "Developer platform",
         description: "Extinde Simplu cu API-uri și SDK-uri moderne.",
-        href: "/#developer-platform",
+        href: "/developer-platform",
         icon: "/navicons/developers.webp",
       },
     ],
@@ -91,7 +91,7 @@ const resourceSections = [
       {
         title: "Help Center",
         description: "Documentație și răspunsuri rapide la întrebări.",
-        href: "/#help",
+        href: "/help",
         icon: "/navicons/help.webp",
       },
     ],
@@ -142,8 +142,7 @@ const resourceCompanySection = {
 };
 
 const simpleLinks = [
-  { label: "Customers", href: "/#customers" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export const VercelNavbar = () => {
@@ -194,63 +193,63 @@ export const VercelNavbar = () => {
             <div className="hidden lg:block">
               <NavigationMenu>
                 <NavigationMenuList className="items-center">
-              <NavigationMenuItem>
+                  <NavigationMenuItem>
                     <NavigationMenuTrigger className={triggerClassName()}>
                       Platform
-                </NavigationMenuTrigger>
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent className="p-4">
                       <div className="flex min-w-[360px] flex-col gap-6 md:min-w-[620px]">
                         {platformSections.map((section) => (
                           <PlatformSection key={section.heading} section={section} />
-                      ))}
-                    </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
+                  <NavigationMenuItem>
                     <NavigationMenuTrigger className={triggerClassName()}>
-                  Resources
-                </NavigationMenuTrigger>
+                      Resources
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent className="p-4">
                       <div className="flex min-w-[320px] flex-col gap-4 md:min-w-[520px] md:flex-row md:items-start md:gap-10">
                         <div className="flex-1 space-y-4">
                           {resourceSections.map((section) => (
                             <ResourceSection key={section.heading} section={section} />
-                      ))}
-                    </div>
+                          ))}
+                        </div>
                         <div className="hidden h-full w-px bg-border/60 md:block" />
                         <CompanySection section={resourceCompanySection} />
-                    </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
 
                   {simpleLinks.map((item) => (
                     <NavigationMenuItem key={item.label}>
-                <NavigationMenuLink
-                  asChild
+                      <NavigationMenuLink
+                        asChild
                         className={cn(triggerClassName(), "cursor-pointer")}
                       >
                         <a href={item.href}>{item.label}</a>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
                   ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
             <Button asChild variant="outline" size="sm">
-              <Link to="/select">Sign in</Link>
+              <a href="https://app.simplu.io">Sign in</a>
             </Button>
             {isAuthenticated ? (
               <Button size="sm" onClick={handleLogout}>
                 Deconectare
-          </Button>
+              </Button>
             ) : (
-              <Button size="sm" onClick={handleLogin}>
+              <Button size="sm" onClick={() => window.location.href = "https://app.simplu.io"}>
                 Start for free
-          </Button>
+              </Button>
             )}
           </div>
 
@@ -266,8 +265,8 @@ export const VercelNavbar = () => {
         </div>
 
         {mobileOpen ? (
-          <div className="border-t border-border bg-background lg:hidden">
-            <div className="space-y-6 px-4 py-6">
+          <div className="border-t border-border bg-background lg:hidden h-[calc(100vh-64px)] overflow-y-auto">
+            <div className="space-y-6 px-4 py-6 pb-20">
               <MobileSection
                 title="Platform"
                 sections={platformSections}
@@ -292,20 +291,20 @@ export const VercelNavbar = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <Button asChild variant="outline" size="sm" onClick={closeMobile}>
-                  <Link to="/select">Încearcă acum</Link>
+                  <a href="https://app.simplu.io">Sign in</a>
                 </Button>
                 {isAuthenticated ? (
                   <Button size="sm" onClick={handleLogout}>
                     Deconectare
                   </Button>
                 ) : (
-                  <Button size="sm" onClick={handleLogin}>
-                    Conectare
+                  <Button size="sm" onClick={() => window.location.href = "https://app.simplu.io"}>
+                    Start for free
                   </Button>
                 )}
-        </div>
-      </div>
-    </div>
+              </div>
+            </div>
+          </div>
         ) : null}
       </nav>
       <div className="h-16" />
@@ -421,7 +420,7 @@ const MobileSection = ({ title, sections, onNavigate }) => (
   <div>
     <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
       {title}
-            </div>
+    </div>
     <div className="space-y-4">
       {sections.map((section) => (
         <div key={section.heading}>
@@ -438,7 +437,7 @@ const MobileSection = ({ title, sections, onNavigate }) => (
                 >
                   {item.title}
                 </a>
-    </li>
+              </li>
             ))}
           </ul>
         </div>
@@ -451,8 +450,8 @@ const Logo = () => (
   <div className="flex items-center gap-2">
     <img src="/Group-1.png" alt="Simplu" className="h-7 w-auto" />
     <TextEffect className="text-2xl font-bold">simplu</TextEffect>
-    </div>
-  );
+  </div>
+);
 
 export default VercelNavbar;
 

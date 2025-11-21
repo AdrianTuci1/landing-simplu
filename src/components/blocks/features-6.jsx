@@ -34,16 +34,15 @@ export function Features() {
             <div className="mx-auto max-w-5xl space-y-8 px-6">
                 <div className="overflow-hidden">
                     <div className="overflow-x-auto">
-                        <div className="grid min-w-max grid-cols-4 divide-x divide-border">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-border border-b border-border">
                             {menuItems.map((item) => (
                                 <div key={item.id} className="flex flex-col">
                                     <button
                                         onClick={() => setActiveTab(item.id)}
-                                        className={`w-full px-6 py-5 text-center text-base font-medium transition-colors duration-200 ${
-                                            activeTab === item.id
-                                                ? 'bg-muted/60 text-foreground'
-                                                : 'bg-background text-muted-foreground hover:bg-muted/40'
-                                        }`}
+                                        className={`w-full px-2 sm:px-4 py-3 sm:py-5 text-center text-sm sm:text-base font-medium transition-colors duration-200 ${activeTab === item.id
+                                            ? 'bg-muted/60 text-foreground'
+                                            : 'bg-background text-muted-foreground hover:bg-muted/40'
+                                            }`}
                                     >
                                         {item.label}
                                     </button>
